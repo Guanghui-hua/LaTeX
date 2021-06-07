@@ -1,0 +1,102 @@
+\documentclass{article}  %使用中文版的article文档类型排版，并选择UTF8编码格式
+
+\usepackage{ctex}
+\usepackage{amsmath}  %使用宏包，这里使用的是调用公式宏包，可以调用多个宏包
+\usepackage{graphicx}
+
+\newtheorem{thm}{定理}
+\newcommand\degree{^\circ} 
+
+
+\begin{document}  %开始写文章
+	
+	
+	\title{杂谈勾股定理}  %大括号里填写标题
+	\author{张三}  %大括号里填写作者姓名
+	\date{\today}    %大括号里填写\today会自动生成当前的日期
+	\maketitle     %我们写了以上内容以后一定要添加这个，制作标题，否则上面的内容都是无效的。
+	
+	
+	\begin{abstract}         %摘要部分
+		\small\centering 这是一篇关于勾股定理的小论文。
+	\end{abstract}
+
+
+	
+	\tableofcontents  %目录部分
+	%目录的前缀页面都会自动排版不需要手动排版
+	
+	
+	\section{勾股定理在古代}  \label{sec:ancient}
+	\small 西方称勾股定理为毕达哥拉斯定理，将勾股定理的发现归功于公元前6世纪的毕达哥拉斯学派\cite{Kline}。该学派得到了一个法则，可以求出可排成直角三角形三边的三元数组。毕达哥拉斯学派没有书面著作，该定理的严格表述和证明则见于欧几里得\footnote{欧几里得，公元前 330——275 年。}《几何原本》的命题47：“直角三角形斜边上的正方形等于两直角边上的两个正方形之和。”证明是用面积做的。
+	
+	\small 我国《周髀算经》载商高（约公元前12世纪）答周公问：
+	
+	\footnotesize\centering 勾广三，股修四，径隅五。
+	
+	\small 又载陈子（公元前 7——6 世纪）答荣方问：
+	
+	
+	\footnotesize\centering 若求邪至日者，以日下为勾，日高为股，勾股各自乘，并开方而除之，得邪至日。
+	
+	\small 较古希腊更早。后者已经明确道出勾股定理的一般形式。图\ref{fig:xiantu}是我国古代对勾股定理的一种证明\cite{quanjing}
+	%\begin{figure}[!ht]\centering
+		%\includegraphics[scale=0.5]{xiantu.jpg}
+		%\caption{\zihao{-5} \kaishu 宋赵爽在《周髀算经》注中作的弦图（仿制），该图给出了勾股定理的一个极具对称美的证明。\label{fig:xiantu}}
+	%\end{figure}
+	\section{勾股定理的近代形式}
+	
+	
+	
+	\begin{thm}[\small 勾股定理]  %开始定理环境
+	\small 直角三角形斜边的平方等于两腰的平方和。\small
+	 可以用符号语言表述为：设直角三角形$ABC$，其中$\angle C=90\degree$，则有
+	 
+	\begin{equation}\label{eq:gougu}  %开始单行公式环境equation，并添加了书签gougu
+	\small AB^2=BC^2+AC^2.
+		\end{equation}
+	
+	\end{thm}
+	
+	\small 满足式 \eqref{eq:gougu} 的整数称为\emph{勾股数}。第 \ref{sec:ancient} 节所说毕达哥拉斯学派得到的三元数就是勾股数。下表给出一些较小的勾股数：
+	
+	\vspace{3mm}  %空一行
+	
+	\begin{tabular}{|c|c|c|}\hline   %开始表格环境，{|c|c|c|}表示文字居中的三列，\hline...\hline表述画两条并排的水平线。
+	%\hline必须用于首行之前或者换行命令之后。
+			
+		\small 直角边$a$&直角边$b$&斜边$c$\\\hline   %&是数据分割符号
+		3&4&5\\\hline
+		5&12&13\\\hline
+	\end{tabular}
+
+	\small ($a^2+b^2=c^2$)
+	
+	
+	\begin{thm}[欧式距离]   %加上这个主要是有一个  括号自适应大小的问题 
+		
+		$$d(x,y)=(\sum\limits_{i=1}^n(\xi_i-\eta_i)^2)^\frac{1}{2}$$
+		
+		
+		\begin{center}
+		很明显括号的大小不合适
+		\end{center}
+	
+		$$d(x,y)=\left(\sum\limits_{i=1}^n(\xi_i-\eta_i)^2\right)^\frac{1}{2}$$
+	\end{thm}
+	
+	
+	\begin{thebibliography}{99}    %参考文献开始
+		\bibitem{1}失野健太郎.几何的有名定理.上海科学技术出版社，1986.      
+		\bibitem{quanjing}曲安金.商高、赵爽与刘辉关于勾股定理的证明.数学传播,20(3),1998.  
+		\bibitem{Kline}克莱因.古今数学思想.上海科学技术出版社，2002.
+	\end{thebibliography}
+
+	\addcontentsline{toc}{section}{参考文献}
+	
+	\begin{appendix}
+		\section{附录}
+		\small 勾股定理又叫商高定理，国外也称百牛定理。
+	\end{appendix}
+	
+\end{document}  %结束写文章
